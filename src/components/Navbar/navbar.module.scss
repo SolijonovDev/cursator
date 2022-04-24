@@ -1,0 +1,109 @@
+.navbar{
+    width: 100%;
+    padding: 21px 0;
+    .inner{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo{
+            cursor: pointer;
+            h3{
+               font-size: 22px;
+               color:#000;
+               font-weight: 500;
+               font-style: normal;
+            }
+        }
+        .left{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @media (max-width:850px) {
+                display: none;
+            }
+            .all_kurs{
+                width: 164px;
+                padding: 14px 0;
+                text-align: center;
+                border-radius: 70px;
+                border: 1px solid #0075FF;
+                @media (max-width:1200px) {
+                    padding: 12px 0;
+                    width: 150px;
+                }
+                @media (max-width:1000px) {
+                    padding:8px 0;
+                    width: 135px;
+                }
+                span{
+                    font-size: 16px;
+                    line-height: 22px;
+                    font-weight: 400;
+                    color:#000;
+                    @media (max-width:1200px) {
+                        font-size: 14px;
+                    }
+                    @media (max-width:1000px) {
+                        font-size: 12px;
+                    }
+                }
+                svg{
+                    margin-left: 8px;
+                }
+
+            }
+            .items{
+                display: flex;
+                align-items: center;
+                .item{
+                    color:#000;
+                    margin-left: 43px;
+                    font-size: 16px;
+                    line-height: 22.8px;
+                    font-weight: 400;
+                    text-decoration: none;
+                    padding: 5px 0 3px;
+                    border-bottom: 2px solid transparent;
+                    transition: all 500ms ease-in-out;
+                    &.active,&:hover{
+                      border-bottom:2px solid #abcaee;
+                      padding-bottom: 3px;
+                      color:#0075FF;
+                    }
+                    @media (max-width:1200px) {
+                        font-size: 14px;
+                        line-height: 16px;
+                        margin-left: 35px;
+                    }
+                    @media (max-width:1000px) {
+                        font-size: 12px;
+                        line-height: 14px;
+                        margin-left: 30px;
+                    }
+                }
+            }
+        }
+        .menu{
+            display: none;
+            width: 25px;
+           .menu_inner{
+               display: flex;
+               height: 20px;
+               flex-direction: column;
+               justify-content: space-between;
+               cursor: pointer;
+            span{
+                width: 25px;
+                height: 2px;
+                display: block;
+                background-color: #000;
+
+            }
+           }
+            @media (max-width:850px) {
+                display: block;
+            }
+        }
+    }
+}

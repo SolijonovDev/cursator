@@ -2,8 +2,11 @@
 }
 
 .header{
-    padding-top: 91px;
+    padding-top: 71px;
     padding-bottom: 91px;
+    padding-right: -10px;
+    max-width: 1300px;
+    margin: 0 auto;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -12,14 +15,48 @@
     background-position: right top;
     background-size: 60% 100%;
     background-repeat: no-repeat;
+    padding-left: 10px;
+
+    filter: drop-shadow(9px 8px 30px rgba(0, 0, 0, 0.38));
+    // transform: matrix(-1, 0, 0, 1, 0, 0);
+    @media (max-width:1200px) {
+        background-size: 55% 100%;
+    }
+    @media (max-width:850px) {
+        background-size: 50% 100%;
+    }
+    @media (max-width:600px) {
+        padding-top: 38px;
+        background-size: 100% 40%;
+        background-position: bottom;
+    }
     .text{
         width: 40%;
+        @media (max-width:600px) {
+            width: 100%;
+            padding-bottom: 200px;
+        }
         .title{
             font-size: 60px;
             font-weight: 700;
             font-style: normal;
             color:#000;
             margin-bottom: 30px;
+            @media (max-width:1200px) {
+                font-size: 54px;
+                line-height: 60px;
+                margin-bottom: 26px;
+            }
+            @media (max-width:850px) {
+                font-size: 44px;
+                line-height: 51px;
+                margin-bottom: 23px;
+            }
+            @media (max-width:350px) {
+                font-size: 35px;
+                line-height: 51px;
+                margin-bottom: 23px;
+            }
         }
         .desc{
             font-size: 18px;
@@ -27,11 +64,19 @@
             color:#000;
             line-height: 25.65px;
             margin-bottom: 45px;
+            @media (max-width:850px) {
+                font-size: 16px;
+                line-height: 22px;
+                margin-bottom: 31px;
+            }
         }
         .btn_block{
             display: flex;
             align-items: center;
             margin-bottom: 20px;
+            @media (max-width:600px) {
+                margin-bottom: 26px;
+            }
             button{
                 padding: 21px 0;
                 text-align: center;
@@ -47,22 +92,32 @@
                 border:1px solid #0075FF;
                 cursor: pointer;
                 transition: all 500ms ease-in;
+                margin-right: 20px;
                 &:hover{
                     background-color: transparent;
                     color:#0075FF;
                 }
+                @media (max-width:1200px) {
+                    width: 190px;
+                }
+                @media (max-width:850px) {
+                    width: 177px;
+                    padding: 20px 0;
+                    font-size: 14px;
+                    line-height: 19px;
+                    margin-right: 22px;
+                }
+
             }
             p{
-                display: none;
+                font-size: 13px;
+                line-height: 18px;
+                font-weight: 400;
+                a{
+                    color:#0075FF;
+                    text-decoration: none;
+                }
             }
         }
     }
-    .photo{
-        width: 50%;
-        img{
-            width: 400px;
-            height: 350px;
-        }
-    }
-    border:1px solid red;
 }

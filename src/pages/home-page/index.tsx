@@ -7,9 +7,7 @@ import { Header } from "./Header";
 export const HomePage: FC = () => {
   return (
     <div className={classNames(s.home)}>
-      <div className="container">
         <Header />
-      </div>
     </div>
   );
 };
