@@ -1,39 +1,37 @@
-import React, { ChangeEvent, FC, useEffect, useRef, useState } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 import s from "./navbar.module.scss";
-import { navbarItems } from "./../../assets/constants/navbar";
 import { Link, useHistory, useLocation } from "react-router-dom";
-import  classNames  from 'classnames';
-import { Drawer } from './../Drawer/index';
+import classNames from "classnames";
+import { Drawer } from "./../Drawer/index";
 import { DropDown } from "../Dropdown";
+import { navbarItems } from "./../../assets/constants/navbar";
 
-interface NavbarProps{
-  drop:boolean;
-  changeDrop:()=>void;
+interface NavbarProps {
+  drop: boolean;
+  close: () => void;
+  open: () => void;
 }
 
-export const Navbar: FC<NavbarProps> = ({drop,changeDrop}) => {
-  
-  const [open,setOpen]=useState<boolean>(false);
-  console.log('render',drop);
+export const Navbar: FC<NavbarProps> = ({ drop, close:handleDragClose, open:handleDragOpen }) => {
+  const [open, setOpen] = useState<boolean>(false);
 
-  const f=useRef<HTMLDivElement>(null);
- 
- 
-  useEffect(()=>{
+  const f = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
     if (f && f.current) {
-      f.current.addEventListener("pointerenter",changeDrop)
-      f.current.addEventListener("pointerleave",changeDrop)
+      f.current.addEventListener("mouseenter", handleDragOpen);
+      f.current.addEventListener("mouseleave", handleDragClose);
       return () => {
-        f.current?.removeEventListener("pointerenter",changeDrop)
-        f.current?.removeEventListener("pointerleave",changeDrop)
-      }
+        f.current?.removeEventListener("mouseenter", handleDragOpen);
+        f.current?.removeEventListener("mouseleave", handleDragClose);
+      };
     }
-  },[])
+  }, []);
 
-  const {pathname} =useLocation();
+  const { pathname } = useLocation();
   const history = useHistory();
-  const handleClose=():void=>setOpen(false)
-  const handleOpen=():void=>setOpen(true)
+  const handleClose = (): void => setOpen(false);
+  const handleOpen = (): void => setOpen(true);
   return (
     <div className={s.navbar}>
       <div className="container">
@@ -56,26 +54,33 @@ export const Navbar: FC<NavbarProps> = ({drop,changeDrop}) => {
                   fill="black"
                 />
               </svg>
-              <DropDown open={drop} close={changeDrop}/>
+              <DropDown open={drop} close={handleDragClose} />
             </div>
             <div className={s.items}>
               {navbarItems.map((v) => (
-                <Link className={classNames(s.item,pathname===v.path?s.active:null)} to={v.path} key={v.id + v.path}>
+                <Link
+                  className={classNames(
+                    s.item,
+                    pathname === v.path ? s.active : null
+                  )}
+                  to={v.path}
+                  key={v.id + v.path}
+                >
                   {v.link}
                 </Link>
               ))}
             </div>
           </div>
           <div className={s.menu}>
-           <div className={s.menu_inner} onClick={handleOpen}>
-           <span></span>
-           <span></span>
-           <span></span>
-           </div>
+            <div className={s.menu_inner} onClick={handleOpen}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
         </div>
       </div>
-      <Drawer open={open} onclose={handleClose}/>
+      <Drawer open={open} onclose={handleClose} />
     </div>
   );
 };

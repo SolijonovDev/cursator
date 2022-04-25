@@ -5,6 +5,11 @@ import dir4 from '../images/direction4.svg'
 import dir5 from '../images/direction5.svg'
 import dir6 from '../images/direction6.svg'
 
+import logo from '../images/school/image.png'
+import logo2 from '../images/school/image1.png'
+import logo3 from '../images/school/image3.png'
+import logo4 from '../images/school/image2.png'
+
 export const courseDirections=[
     {
        id:1,
@@ -48,4 +53,55 @@ export const courseDirections=[
         title:"300 курсов",
         path:"/kurs/:create-content"
     },
+]
+
+export const topSchool=[
+    {
+       id:1,
+       logo,
+    },
+    {
+        id:2,
+        logo:logo2
+    },
+    {
+        id:3,
+        logo:logo3
+    },
+    {
+        id:4,
+        logo:logo4
+    },
+    {
+       id:5,
+       logo,
+    },
+    {
+        id:6,
+        logo:logo2
+    },
+    {
+        id:7,
+        logo:logo3
+    },
+    {
+        id:8,
+        logo:logo4
+    },
+    {
+       id:9,
+       logo,
+    },
+    {
+        id:10,
+        logo:logo2
+    },
+    {
+        id:11,
+        logo:logo3
+    },
+    {
+        id:12,
+        logo:logo4
+    }
 ]

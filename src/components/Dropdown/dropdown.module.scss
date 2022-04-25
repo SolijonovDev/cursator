@@ -1,11 +1,35 @@
 .dropdown{
     position: absolute;
     top: 100%;
-    background-color: red;
-    .active{
+    padding-top: 14px;
+    z-index: 100;
+    &.active{
         display: block;
     }
-    .hide{
+    &.hide{
         display: none;
+    }
+    .inner{
+        border: 1px solid rgba(220, 220, 220, 1);
+        background-color: #fff;
+        padding: 0 28px 0 21px;
+        border-radius: 14px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        .first{
+            text-align: left;
+            padding: 15px 0 23px;
+            a{
+                text-decoration: none;
+                color:#000;
+                padding: 5px;
+                display: block;
+                &:hover{
+                    color: #0075FF;
+
+                }
+            }
+        }
     }
 }

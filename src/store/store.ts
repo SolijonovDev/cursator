@@ -1,6 +1,8 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import userRouter from './reducers/user'
 
 const rootReducer = combineReducers({
+  user:userRouter
 });
 
 export const setupStore = () => {

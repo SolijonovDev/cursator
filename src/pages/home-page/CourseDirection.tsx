@@ -12,7 +12,7 @@ export const CourseDirection:FC=()=>{
                    <div className={s.items}>
                  {
                      courseDirections.map(v=>(
-                         <CourseItem item={v}/>
+                         <CourseItem key={v.id+v.path} item={v}/>
                      ))
                  }
                </div>

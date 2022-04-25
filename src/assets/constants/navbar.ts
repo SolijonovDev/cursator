@@ -17,3 +17,26 @@ export const navbarItems=[
         path:"/otzivi"
     }
 ]
+
+export const categories=[
+    {
+        id:1,
+        text:"Программирование",
+        path:"/kurs/:programmirovanie"
+    },
+    {
+        id:2,
+        text:"Управление",
+        path:"/kurs/:upravlenie"
+    },
+    {
+        id:3,
+        text:"Дизайн",
+        path:"/kurs/:dizayn"
+    },
+    {
+        id:4,
+        text:"Маркетинг",
+        path:"/kurs/:marketing"
+    }
+]

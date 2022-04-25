@@ -10,10 +10,11 @@ import { HomePage } from "./pages/home-page";
 
 function App() {
   const [dropdown,setDropDown]=useState<boolean>(false)
-  const changeDropDown=()=>setDropDown(prev=>!prev)
+  const handleCloseDropDown=()=>setDropDown(false)
+  const handleOpenDropDown=()=>setDropDown(true)
   return (
     <div className="app">
-      <Navbar drop={dropdown} changeDrop={changeDropDown}/>
+      <Navbar drop={dropdown} open={handleOpenDropDown} close={handleCloseDropDown}/>
       <HomePage/>
       {/* <Switch>
         {
