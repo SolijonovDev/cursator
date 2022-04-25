@@ -135,6 +135,7 @@
             display: flex;
             justify-content: flex-end;
             align-items: center;
+            flex-wrap: wrap;
             
             a{
                 color:#000;
@@ -143,6 +144,7 @@
                 font-weight: 400;
                 margin-left: 46px;
                 text-decoration: none;
+                margin-bottom: 20px;
                 &:hover{
                     color:red;
                 }

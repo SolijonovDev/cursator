@@ -9,9 +9,11 @@ import { Footer } from "./components/Footer";
 import { HomePage } from "./pages/home-page";
 
 function App() {
+  const [dropdown,setDropDown]=useState<boolean>(false)
+  const changeDropDown=()=>setDropDown(prev=>!prev)
   return (
     <div className="app">
-      <Navbar/>
+      <Navbar drop={dropdown} changeDrop={changeDropDown}/>
       <HomePage/>
       {/* <Switch>
         {

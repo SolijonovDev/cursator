@@ -1,12 +1,39 @@
-import React, { FC } from "react";
+import React, { ChangeEvent, FC, useEffect, useRef, useState } from "react";
 import s from "./navbar.module.scss";
 import { navbarItems } from "./../../assets/constants/navbar";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import  classNames  from 'classnames';
+import { Drawer } from './../Drawer/index';
+import { DropDown } from "../Dropdown";
 
-export const Navbar: FC = () => {
-  const {pathname} =useLocation()
+interface NavbarProps{
+  drop:boolean;
+  changeDrop:()=>void;
+}
+
+export const Navbar: FC<NavbarProps> = ({drop,changeDrop}) => {
+  
+  const [open,setOpen]=useState<boolean>(false);
+  console.log('render',drop);
+
+  const f=useRef<HTMLDivElement>(null);
+ 
+ 
+  useEffect(()=>{
+    if (f && f.current) {
+      f.current.addEventListener("pointerenter",changeDrop)
+      f.current.addEventListener("pointerleave",changeDrop)
+      return () => {
+        f.current?.removeEventListener("pointerenter",changeDrop)
+        f.current?.removeEventListener("pointerleave",changeDrop)
+      }
+    }
+  },[])
+
+  const {pathname} =useLocation();
   const history = useHistory();
+  const handleClose=():void=>setOpen(false)
+  const handleOpen=():void=>setOpen(true)
   return (
     <div className={s.navbar}>
       <div className="container">
@@ -15,7 +42,7 @@ export const Navbar: FC = () => {
             <h3>Cursator</h3>
           </div>
           <div className={s.left}>
-            <div className={s.all_kurs}>
+            <div ref={f} className={s.all_kurs}>
               <span>Все курсы</span>
               <svg
                 width="8"
@@ -29,6 +56,7 @@ export const Navbar: FC = () => {
                   fill="black"
                 />
               </svg>
+              <DropDown open={drop} close={changeDrop}/>
             </div>
             <div className={s.items}>
               {navbarItems.map((v) => (
@@ -39,7 +67,7 @@ export const Navbar: FC = () => {
             </div>
           </div>
           <div className={s.menu}>
-           <div className={s.menu_inner}>
+           <div className={s.menu_inner} onClick={handleOpen}>
            <span></span>
            <span></span>
            <span></span>
@@ -47,6 +75,7 @@ export const Navbar: FC = () => {
           </div>
         </div>
       </div>
+      <Drawer open={open} onclose={handleClose}/>
     </div>
   );
 };

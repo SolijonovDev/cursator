@@ -1,0 +1,11 @@
+.dropdown{
+    position: absolute;
+    top: 100%;
+    background-color: red;
+    .active{
+        display: block;
+    }
+    .hide{
+        display: none;
+    }
+}
