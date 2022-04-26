@@ -31,6 +31,9 @@
             @media (max-width:600px) {
                 justify-content: flex-start;
             }
+            .left{
+            
+            }
           
         }
         &__item{
@@ -72,6 +75,7 @@
             display: flex;
             justify-content: flex-start;
             align-items: center;
+            flex-wrap: wrap;
             @media (max-width:600px) {
                 margin-bottom: 22px;
             }

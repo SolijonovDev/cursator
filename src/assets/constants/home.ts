@@ -10,6 +10,8 @@ import logo2 from '../images/school/image1.png'
 import logo3 from '../images/school/image3.png'
 import logo4 from '../images/school/image2.png'
 
+import python from '../images/school/python.png'
+
 export const courseDirections=[
     {
        id:1,
@@ -103,5 +105,50 @@ export const topSchool=[
     {
         id:12,
         logo:logo4
+    }
+]
+
+export const kurss=[
+    {
+        id:1,
+        name:"Веб-разработчик",
+        rating:4.9,
+        count:122,
+        start:"17.08.2021",
+        duration:"8 месяцев",
+        lesson_count:"2-3",
+        format:"Формат: онлайн-лекции, домашние задания с фидбеком от преподавателей",
+        peculiarity:"Особенности: постоянная практика, актуальная программа обучения, чат с одногруппниками. После обучение все студенты проходят стажировку",
+        price:"17 150",
+        one_price:"От 2 777 ₽/мес",
+        logo:python,
+    },
+    {
+        id:2,
+        name:"Веб-разработчик",
+        rating:4.9,
+        count:122,
+        start:"17.08.2021",
+        duration:"8 месяцев",
+        lesson_count:"2-3",
+        format:"Формат: онлайн-лекции, домашние задания с фидбеком от преподавателей",
+        peculiarity:"Особенности: постоянная практика, актуальная программа обучения, чат с одногруппниками. После обучение все студенты проходят стажировку",
+        price:"17 150",
+        one_price:"От 2 777 ₽/мес",
+        logo:python
+    },
+    {
+        id:3,
+        name:"Веб-разработчик",
+        rating:4.9,
+        count:122,
+        start:"17.08.2021",
+        duration:"8 месяцев",
+        lesson_count:"2-3",
+        format:"Формат: онлайн-лекции, домашние задания с фидбеком от преподавателей",
+        peculiarity:"Особенности: постоянная практика, актуальная программа обучения, чат с одногруппниками. После обучение все студенты проходят стажировку",
+        price:"17 150",
+        one_price:"От 2 777 ₽/мес",
+        logo:python
     }
 ]

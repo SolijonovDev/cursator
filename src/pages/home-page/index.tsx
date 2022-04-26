@@ -5,6 +5,8 @@ import classNames from "classnames";
 import { Header } from "./Header";
 import { CourseDirection } from './CourseDirection';
 import { School } from './School';
+import { Kurss } from "./Kurss";
+import { Subscribe } from "./Subscribe";
 
 export const HomePage: FC = () => {
   return (
@@ -12,6 +14,8 @@ export const HomePage: FC = () => {
         <Header />
         <CourseDirection/>
         <School/>
+        <Kurss/>
+        <Subscribe/>
     </div>
   );
 };
