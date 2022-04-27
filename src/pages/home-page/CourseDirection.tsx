@@ -7,7 +7,8 @@ import  classNames  from 'classnames';
 export const CourseDirection:FC=()=>{
     return (
         <div className={s.course_direction}>
-           <div className={classNames(s.inner,'container')}>
+           <div className="container">
+           <div className={classNames(s.inner)}>
                    <h3 className={s.title}>Направления курсов</h3>
                    <div className={s.items}>
                  {
@@ -16,6 +17,7 @@ export const CourseDirection:FC=()=>{
                      ))
                  }
                </div>
+           </div>
            </div>
         </div>
     )

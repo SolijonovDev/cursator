@@ -326,8 +326,6 @@
             display: flex;
             align-items: center;
             cursor: pointer;
-            margin-bottom: 24px;
-
             &:hover {
                 background-color: red;
             }
@@ -652,3 +650,141 @@
     }
 }
 
+.blog{
+    margin-top: 108px;
+    margin-bottom: 124px;
+    @media (max-width:600px) {
+        margin-top: 83px;
+        margin-bottom: 89px;
+    }
+    &_inner{
+        
+    }
+    &_header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 38px;
+        h2{
+            font-size: 28px;
+            line-height: 34px;
+            font-weight: 600;
+            color:#000;
+        }
+        div{
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 5px;
+            span{
+                font-size: 16px;
+                line-height: 20px;
+                font-weight: 500;
+                margin-right: 9px;
+                color:#000;
+
+            }
+            svg{
+                transform: rotate(-90deg);
+                transition: all 500ms ease;
+            }
+            &:hover{
+                background-color: rgba(0,0,0,.1);
+                span{
+                    color: rgba(0, 117, 255, 1);
+                }
+                svg{
+                    path{
+                        fill: rgba(0, 117, 255, 1);
+                    }
+                    transform: rotate(0);
+                }
+            }
+        }
+    }
+    &_items{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        &__item{
+            width: 23%;
+            border-radius: 19px;
+            transition: all 500ms ease;
+            @media (max-width:850px) {
+                width: 30%;
+                &:last-child{
+                    display: none;
+                }
+            }
+            @media (max-width:600px) {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            &_top{
+                width: 100%;
+                height: 40%;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+                @media (max-width:600px) {
+                    height: 173px;
+                }
+            }
+            &_text{
+                height: 60%;
+                width: 100%;
+                padding: 17px 22px;
+                border-left: 1px solid rgba(236, 236, 236, 1);
+                border-right: 1px solid rgba(236, 236, 236, 1);
+                border-bottom: 1px solid rgba(236, 236, 236, 1);
+                border-bottom-left-radius: 19px;
+                border-bottom-right-radius: 19px;
+                h4{
+                    font-size: 16px;
+                    line-height: 19.5px;
+                    font-weight: 500;
+                    margin-bottom: 12px;
+                }
+                p{
+                    font-size: 14px;
+                    line-height: 18.19px;
+                    font-weight: 400;
+                    margin-bottom: 12px;
+                }
+                a{
+                    text-decoration: none;
+                    color:#000;
+                    display: flex;
+                    align-items: center;
+                    span{
+                        margin-right: 9px;
+                        font-size: 16px;
+                        line-height: 20px;
+                        font-weight: 500;
+                    }
+                    svg{
+                        transform: rotate(-90deg);
+                    }
+                    &:hover{
+                        color:rgba(0, 117, 255, 1);
+                        svg{
+                            path{
+                                fill:rgba(0, 117, 255, 1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:hover{
+                transform: scale(1.1);
+                @media (max-width:600px) {
+                    transform: scale(1.04);
+                }
+            }
+        }
+    }
+}

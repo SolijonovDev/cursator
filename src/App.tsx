@@ -6,24 +6,23 @@ import { routers } from "./routers";
 import { NotFound } from './pages/NotFound/index';
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
-import { HomePage } from "./pages/home-page";
 
 function App() {
   const [dropdown,setDropDown]=useState<boolean>(false)
   const handleCloseDropDown=()=>setDropDown(false)
   const handleOpenDropDown=()=>setDropDown(true)
+  
   return (
     <div className="app">
       <Navbar drop={dropdown} open={handleOpenDropDown} close={handleCloseDropDown}/>
-      <HomePage/>
-      {/* <Switch>
+      <Switch>
         {
           routers.map(v=>(
             <Route  key={v.id} path={v.path} exact={v.exact} component={v.com}/>
           ))
         }
         <Route component={NotFound}/>
-      </Switch> */}
+      </Switch>
       <Footer/>
     </div>
   );

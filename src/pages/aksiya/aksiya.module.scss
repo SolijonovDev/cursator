@@ -1,0 +1,231 @@
+.text {
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 93px;
+
+    @media (max-width:850px) {
+        margin-top: 69px;
+        margin-bottom: 69px;
+    }
+
+    @media (max-width:600px) {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    h2,
+    p {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 50px;
+        line-height: 68px;
+        font-weight: 700;
+
+        @media (max-width:850px) {
+            text-align: left;
+            font-size: 32px;
+            margin-bottom: 0;
+        }
+
+        @media (max-width:600px) {
+            font-size: 28px;
+            margin-bottom: 20px;
+            line-height: 36px;
+        }
+    }
+
+    p {
+        width: 60%;
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 400;
+        margin: 0 auto;
+
+        @media (max-width:850px) {
+            text-align: left;
+            width: 80%;
+            margin: 0;
+        }
+
+        @media (max-width:600px) {
+            width: 100%;
+        }
+    }
+}
+
+.aksiya_main {
+    height: 415px;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 10px;
+    margin: 0 auto;
+    position: relative;
+    border:1px solid red;
+    border: 1px solid #DCDCDC;
+    border-radius: 31px;
+    overflow: hidden;
+    margin-bottom: 80px;
+    @media (max-width:750px) {
+        padding: 0;
+        border:none;
+        border-radius: 0;
+        border-top: 1px solid #DCDCDC;
+        border-bottom: 1px solid #DCDCDC;
+    }
+    &__left{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 60%;
+        background-color: #0075FF;
+        clip-path: circle(56% at 37% 50%);
+        padding: 35px 20px;
+        @media (max-width:1000px) {
+            clip-path: circle(61% at 30% 50%);
+        }
+        @media (max-width:750px) {
+            background-color: #fff;
+            clip-path: none;
+            position: relative;
+            width: 100%;
+            padding-top: 47px;
+            padding-bottom: 37px;
+            text-align: center;
+        }
+        h4{
+            margin-bottom: 27px;
+            font-size: 32px;
+            font-weight: 500;
+            color:#fff;
+            @media (max-width:750px) {
+                color:#000;
+                margin-bottom: 17px;
+                font-size: 40px;
+                font-weight: 600;
+            }
+        }
+        p{
+            color:#fff;
+            font-size: 19px;
+            line-height: 27px;
+            font-weight: 500;
+            margin-bottom: 110px;
+            @media (max-width:850px) {
+                font-size: 15px;
+            }
+            @media (max-width:750px) {
+                color:#000;
+                margin-bottom: 40px;
+                line-height: 21px;
+            }
+        }
+        &__bottom{
+            @media (max-width:750px) {
+                display: flex;
+                flex-direction:column-reverse;
+            }
+            p{
+                margin-bottom: 10px;
+                font-size: 25px;
+                line-height: 44px;
+                font-weight: 600;
+                color:#fff;
+                @media (max-width:850px) {
+                    font-size: 18px;
+                }
+                @media (max-width:750px) {
+                    font-size: 18px;
+                    color:#000;
+                    line-height: 44px;
+                    font-weight: 600;
+                }
+            }
+            button{
+                padding: 12px 21px;
+                border-radius: 62px;
+                color:#fff;
+                font-size: 25px;
+                line-height: 44.5px;
+                font-weight: 500;
+                background: #F40000;
+                border:1px solid #F40000;
+                outline: none;
+                transition: all 500ms ease;
+                @media (max-width:750px) {
+                    font-size: 16px;
+                }
+                &:hover{
+                    color:#F40000;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+    &__right {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 50%;
+        background-image: url('../../assets/images/aktsiya_photo.png');
+        background-position: right center;
+        background-size: 80% 100%;
+        background-repeat: no-repeat;
+        @media (max-width:750px) {
+            display: none;
+        }
+    }
+    &__link{
+        position: absolute;
+        top: 80%;
+        right: 0;
+        background: #0075FF;
+        border-top:1px solid #0075FF;
+        border-left:1px solid #0075FF;
+        padding: 27px 43px;
+        border-top-left-radius: 31px;
+        transition: all 500ms ease;
+        @media (max-width:750px) {
+            width: 100%;
+            border:none;
+            border-radius: 0;
+            border:1px solid #0075FF;
+        }
+        a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        span{
+            font-size: 19px;
+            line-height: 27px;
+            font-weight: 600;
+            color:#fff;
+            margin-right: 17px;
+        }
+        svg{
+            transform: rotate(-90deg);
+            path{
+                fill: #fff;
+            }
+        }
+        &:hover{
+            background-color: transparent;
+            color:#0075FF;
+            span{
+                color:#0075FF;
+            }
+            svg{
+                path{
+                    fill:#0075FF;
+                }
+            }
+        }
+
+    }
+}

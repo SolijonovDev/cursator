@@ -1,20 +1,21 @@
+import { routerNames } from "../../routers"
 
 
 export const navbarItems=[
     {
         id:1,
         link:'Тест на профессию',
-        path:"/test-na-professiyu"
+        path:routerNames.tests
     },
     {
         id:2,
         link:"Акции",
-        path:"/aktsiya"
+        path:routerNames.aksiya
     },
     {
         id:3,
         link:"Отзывы",
-        path:"/otzivi"
+        path:routerNames.reviews
     }
 ]
 

@@ -12,6 +12,8 @@ import logo4 from '../images/school/image2.png'
 
 import python from '../images/school/python.png'
 
+import blog from '../images/blog_python.png'
+
 export const courseDirections=[
     {
        id:1,
@@ -151,4 +153,32 @@ export const kurss=[
         one_price:"От 2 777 ₽/мес",
         logo:python
     }
+]
+
+
+export const blogs=[
+    {
+        id:1,
+        photo:blog,
+        text:"Профессия «Python разработчик»",
+        desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus",
+    },
+    {
+        id:2,
+        photo:blog,
+        text:"Профессия «Python разработчик»",
+        desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus",
+    },
+    {
+        id:3,
+        photo:blog,
+        text:"Профессия «Python разработчик»",
+        desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus",
+    },
+    {
+        id:4,
+        photo:blog,
+        text:"Профессия «Python разработчик»",
+        desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus",
+    },
 ]

@@ -29,7 +29,7 @@ export const Kurss: FC = () => {
         </div>
         <div className={s.kurs_items}>
           {kurss.map((v) => (
-            <div className={s.kurs_item}>
+            <div key={v.id} className={s.kurs_item}>
               <div
                 className={s.kurs_top}
                 style={{ backgroundImage: `url(${v.logo})` }}
