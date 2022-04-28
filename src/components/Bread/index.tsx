@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import { FC } from "react";
 import { Link } from "react-router-dom";
+import { breadModel } from "../../model/Bread";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -30,7 +31,11 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export const Bread: FC = () => {
+interface BreadProps {
+  items: breadModel[];
+}
+
+export const Bread: FC<BreadProps> = ({ items }) => {
   const classes = useStyles();
 
   return (
@@ -40,12 +45,17 @@ export const Bread: FC = () => {
           separator={<NavigateNextIcon fontSize="small" />}
           aria-label="breadcrumb"
         >
-          <Link to="/" className={classes.link}>
-            Главная
-          </Link>
-          <Typography className={classes.text} color="textPrimary">
-            Акции онлайн школ
-          </Typography>
+          {items.map((v) =>
+            v.path ? (
+              <Link className={classes.link} to={v.path} key={v.id}>
+                {v.text}
+              </Link>
+            ) : (
+              <Typography key={v.id} className={classes.text} color="textPrimary">
+                {v.text}
+              </Typography>
+            )
+          )}
         </Breadcrumbs>
       </div>
     </div>
