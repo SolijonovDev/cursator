@@ -278,9 +278,19 @@
             padding: 19px 28px;
             margin-bottom: 18px;
             border-radius: 9px;
+           
+        }
+        .error{
+            border:1px solid red;
+        }
+        input+p{
+            color:red;
+            margin-bottom: 15px;
+            text-transform: uppercase;
 
         }
     }
+
 
     &_bottom {
         display: flex;
