@@ -1,0 +1,119 @@
+.tests{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.head{
+    margin-top: 92px;
+    margin-bottom: 30px;
+    .inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    &_text{
+         font-size: 50px;
+         line-height: 68px;
+         font-weight: 700;
+         color:#000;
+         width: 60%;
+    }
+    a{
+        background-color: rgba(67, 197, 158, 0.11);
+        padding: 12px 0;
+        border:1px solid rgba(67, 197, 158, 0.11);
+        width: 256px;
+        text-align: center;
+        color: rgba(67, 197, 158, 1);
+        border-radius: 24px;
+        margin-top: 10px;
+        text-decoration: none;
+        &:hover{
+            background-color: transparent;
+            color:rgba(67, 197, 158, 1);
+        }
+    }
+}
+
+.item{
+    border: 1px solid rgba(220, 220, 220, 1);
+    border-radius: 19px;
+    padding: 38px 20px;
+}
+
+.swiper{
+    width: 100%;
+    margin: 0 auto;
+    border:1px solid blue;
+    padding: 40px 80;
+    margin-bottom: 94px;
+    padding: 0 10px;
+    &_texts{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 87px;
+        p{
+            width: 50%;
+            font-size: 16px;
+            line-height: 22px;
+            font-weight: 400;
+        }
+    }
+    &_btns{
+        display: flex;
+        align-items: center;
+    }
+    &_btn{
+        border: 1px solid rgba(0, 117, 255, 1);
+        background-color: transparent;
+        width: 55px;
+        height: 55px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 500ms ease;
+        path{
+            fill: rgba(0, 117, 255, 1);
+        }
+        &:hover{
+            background-color: rgba(0, 117, 255, 1);
+            path{
+                fill: #fff;
+            }
+        }
+    }
+    &_prev_btn{
+        margin-right: 14px;
+        svg{
+            transform: rotate(90deg);
+            width: 15px;
+            height: 10px;
+        }
+    }
+    &_next_btn{
+        svg{
+            transform: rotate(-90deg);
+            width: 15px;
+            height: 10px;
+        }
+    }
+    &_inner{
+        width: 100%;
+        max-width: 1000px;
+    }
+    &_block{
+        margin:0 auto;
+        width: 100%;
+        overflow: hidden;
+        background-color: darkgray;
+
+    }
+}
+
+.swiper_block{
+    margin: 0 auto;
+    max-width: 1000px;
+}
