@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import s from "./navbar.module.scss";
+import logo from '../../assets/images/logo.png'
 import { Link, useHistory, useLocation } from "react-router-dom";
 import classNames from "classnames";
 import { Drawer } from "./../Drawer/index";
@@ -37,7 +38,7 @@ export const Navbar: FC<NavbarProps> = ({ drop, close:handleDragClose, open:hand
       <div className="container">
         <div className={s.inner}>
           <div onClick={() => history.push("/")} className={s.logo}>
-            <h3>Cursator</h3>
+            <img src={logo} alt="logo" />
           </div>
           <div className={s.left}>
             <div ref={f} className={s.all_kurs}>

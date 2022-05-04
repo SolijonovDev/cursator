@@ -1,69 +1,57 @@
-import s from "./tests.module.scss";
-import { useState } from "react";
+import { FC, useState } from "react";
 import {
+  Button,
   Checkbox,
   FormControlLabel,
   FormGroup,
-  FormControl
 } from "@material-ui/core";
 
-export const Item = () => {
-  const [state, setState] = useState({
-    gilad: true,
-    jason: false,
-    antoine: false,
-  });
+import s from './tests.module.scss'
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setState({
-      ...state,
-      [event.target.name]: event.target.checked,
-    });
-  };
-  const { gilad, jason, antoine } = state;
+export const Item: FC = () => {
+  const [checked,setChecked]=useState("")
+  const handleChange=(text:string)=>{
+    console.log("change",text);
+      setChecked(text)
+  }
   return (
     <div className={s.item}>
-      <div>
-        <h2>Вы любите контролировать других людей и вести учет?</h2>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-{/* 
-      <FormControl component="fieldset" variant="standard">
+      <h2>Вы любите контролировать других людей и вести учет?</h2>
+      <div className="forms">
         <FormGroup>
           <FormControlLabel
             control={
-              <Checkbox 
-              color="secondary"
-              checked={gilad} onChange={handleChange} name="gilad" />
+              <Checkbox
+              // checked={"checkedA"===checked}
+              //   onChange={() => handleChange("checkedA")}
+                name="checkedA"
+              />
             }
             label="Да"
           />
           <FormControlLabel
             control={
-              <Checkbox 
-              color="secondary"
-              checked={jason} onChange={handleChange} name="jason" />
+              <Checkbox
+              // checked={"checkedB"===checked}
+              // onChange={() => handleChange("checkedB")}
+                name="checkedB"
+              />
             }
             label="Нет"
           />
           <FormControlLabel
             control={
               <Checkbox
-              color="secondary"
-                checked={antoine}
-                onChange={handleChange}
-                name="antoine"
+              // checked={"checkedC"===checked}
+              // onChange={() => handleChange("checkedC")}
+                name="checkedC"
               />
             }
             label="Затрудняюсь ответить"
           />
         </FormGroup>
-      </FormControl> */}
+      </div>
+      
     </div>
   );
 };

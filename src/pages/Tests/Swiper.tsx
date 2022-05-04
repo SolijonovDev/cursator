@@ -1,32 +1,39 @@
 import React, { useRef, useState } from "react";
+// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import s from "./tests.module.scss";
 
+// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 import "./styles.scss";
 
-import { Navigation } from "swiper";
+// import required modules
+import { Pagination, Navigation } from "swiper";
 import { Item } from "./Item";
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-export const SwiperCom = () => {
-
+export const SwiperCom=()=> {
   return (
+    <>
       <Swiper
-        slidesPerView={3}
-        spaceBetween={20}
+        pagination={{
+          type: "fraction",
+        }}
+        slidesPerView={1.2}
         navigation={true}
-        modules={[Navigation]}
+        spaceBetween={53}
+        modules={[Pagination, Navigation]}
         className="mySwiper"
       >
         {arr.map((v) => (
           <SwiperSlide key={v}>
-            <Item  />
+            <Item />
           </SwiperSlide>
         ))}
       </Swiper>
+    </>
   );
-};
+}

@@ -1,8 +1,9 @@
+import React, {FC} from 'react'
+import s from './notfound.module.scss'
 
-
-export const NotFound=()=>{
+export const NotFound:FC=()=>{
     return (
-        <div>
+        <div className={s.notfound}>
             <h1>Not found</h1>
         </div>
     )

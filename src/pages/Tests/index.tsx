@@ -1,23 +1,35 @@
-import { FC, useEffect } from "react";
+import React, { FC, useEffect } from "react";
 import s from "./tests.module.scss";
 import { SwiperCom } from "./Swiper";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
+import { Button } from "@material-ui/core";
 
-export const Tests: FC = () => {
-    
-    useEffect(()=>{
-          console.log(document.querySelector(".swiper-wrapper"))
-    },[])
+export const Tests = () => {
+  const [firstD, setFirstD] = React.useState(false);
+  const [lastD, setLastD] = React.useState(false);
+  useEffect(() => {
+    setFirstD(true);
+  }, []);
 
   const handleNextSlide = () => {
     const next: any = document.querySelector(".swiper-button-next");
     next.click();
+    const elems = document.querySelectorAll(".swiper-slide");
+    if (elems[elems.length - 1].classList.contains("swiper-slide-active")) {
+      setLastD(true);
+    }
+    setFirstD(false);
   };
 
   const handlePrevSlide = () => {
     const prev: any = document.querySelector(".swiper-button-prev");
     prev.click();
+    const elems = document.querySelectorAll(".swiper-slide");
+    if (elems[0].classList.contains("swiper-slide-active")) {
+      setFirstD(true);
+    }
+    setLastD(false);
   };
 
   return (
@@ -36,8 +48,13 @@ export const Tests: FC = () => {
           </p>
           <div className={s.swiper_btns}>
             <button
+              disabled={firstD}
               onClick={handlePrevSlide}
-              className={classNames(s.swiper_btn, s.swiper_prev_btn)}
+              className={classNames(
+                s.swiper_btn,
+                s.swiper_prev_btn,
+                firstD ? s.disabled : ""
+              )}
             >
               <svg
                 width="8"
@@ -54,7 +71,11 @@ export const Tests: FC = () => {
             </button>
             <button
               onClick={handleNextSlide}
-              className={classNames(s.swiper_btn, s.swiper_next_btn)}
+              className={classNames(
+                s.swiper_btn,
+                s.swiper_next_btn,
+                lastD ? s.disabled : ""
+              )}
             >
               <svg
                 width="8"
@@ -72,9 +93,14 @@ export const Tests: FC = () => {
           </div>
         </div>
         <div className={s.swiper_block}>
-          <div className={s.swiper_inner}>
-            <SwiperCom />
-          </div>
+          <SwiperCom />
+          <Button 
+          disabled={lastD} 
+          onClick={handleNextSlide} 
+          variant="contained" 
+          color="primary">
+            далее
+          </Button>
         </div>
       </div>
     </div>

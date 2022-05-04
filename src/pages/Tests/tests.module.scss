@@ -44,7 +44,6 @@
 .swiper{
     width: 100%;
     margin: 0 auto;
-    border:1px solid blue;
     padding: 40px 80;
     margin-bottom: 94px;
     padding: 0 10px;
@@ -75,6 +74,10 @@
         border-radius: 10px;
         cursor: pointer;
         transition: background-color 500ms ease;
+        display: block;
+        &.disabled{
+            display: none;
+        }
         path{
             fill: rgba(0, 117, 255, 1);
         }
@@ -102,18 +105,16 @@
     }
     &_inner{
         width: 100%;
-        max-width: 1000px;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 50px;
+        background-color: blue;
     }
     &_block{
         margin:0 auto;
         width: 100%;
         overflow: hidden;
-        background-color: darkgray;
-
     }
 }
 
-.swiper_block{
-    margin: 0 auto;
-    max-width: 1000px;
-}
+

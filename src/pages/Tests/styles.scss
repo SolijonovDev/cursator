@@ -16,12 +16,25 @@
 // //     // transform: scale(1.3);
 // //     border:1px solid red;
 // // }
-// .swiper-slide-active{
-//     // transform: scale(1.1);
-//     // div{
-//     //     padding: 40px 10px;
-//     // }
-// }
-// .swiper-button-prev.swiper-button-next{
-//     display: none;
-// }
+.swiper-slide-active{
+    // transform: scale(1.1) !important;
+    // margin-top: -10px;
+    // background-color: red;
+    // div{
+    //     padding: 20px;
+    // }
+}
+.swiper-button-prev,.swiper-button-next{
+    display: none;
+}
+
+
+.swiper-pagination-fraction{
+    top: 40px;
+    right: 31px;
+    padding: 15px;
+    border-radius: 8px;
+    width: auto;
+    left: 0;
+    bottom: 0;
+}
