@@ -11,7 +11,7 @@
         left: 0;
         background-color:#fff;
         .header{
-            padding: 40px 15px 120px;
+            padding: 21px 10px 120px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -20,7 +20,10 @@
             align-items: center;
             img{
                 width: auto;
-                height: 22px;
+                height: 50px;
+                @media (max-width:600px) {
+                    height: 30px;
+                }
             }
         }
         .items{

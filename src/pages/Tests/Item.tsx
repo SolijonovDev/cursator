@@ -1,57 +1,51 @@
 import { FC, useState } from "react";
 import {
-  Button,
   Checkbox,
+  FormControl,
   FormControlLabel,
   FormGroup,
 } from "@material-ui/core";
 
-import s from './tests.module.scss'
+import s from "./tests.module.scss";
 
 export const Item: FC = () => {
-  const [checked,setChecked]=useState("")
-  const handleChange=(text:string)=>{
-    console.log("change",text);
-      setChecked(text)
-  }
   return (
     <div className={s.item}>
       <h2>Вы любите контролировать других людей и вести учет?</h2>
       <div className="forms">
-        <FormGroup>
-          <FormControlLabel
-            control={
-              <Checkbox
-              // checked={"checkedA"===checked}
-              //   onChange={() => handleChange("checkedA")}
-                name="checkedA"
+        <FormControl component="fieldset">
+          <FormGroup aria-label="position" row={false}>
+            <div className={s.form_block}>
+              <FormControlLabel
+                value="end"
+                control={<Checkbox color="primary" />}
+                label="Да"
+                labelPlacement="end"
               />
-            }
-            label="Да"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-              // checked={"checkedB"===checked}
-              // onChange={() => handleChange("checkedB")}
-                name="checkedB"
+            </div>
+            <div className={s.form_block}>
+              <FormControlLabel
+                value="End"
+                control={<Checkbox color="primary" />}
+                label="Нет"
+                labelPlacement="end"
               />
-            }
-            label="Нет"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-              // checked={"checkedC"===checked}
-              // onChange={() => handleChange("checkedC")}
-                name="checkedC"
+            </div>
+            <div className={s.form_block}>
+              <FormControlLabel
+                value="end"
+                control={
+                  <Checkbox
+                    color="primary"
+                  />
+                }
+                label="Затрудняюсь ответить"
+                labelPlacement="end"
               />
-            }
-            label="Затрудняюсь ответить"
-          />
-        </FormGroup>
+            </div>
+          </FormGroup>
+        </FormControl>
       </div>
-      
     </div>
   );
 };

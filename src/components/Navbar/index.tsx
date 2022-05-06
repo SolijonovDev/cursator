@@ -1,11 +1,13 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import s from "./navbar.module.scss";
-import logo from '../../assets/images/logo.png'
+import logo from "../../assets/images/logo.png";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import classNames from "classnames";
 import { Drawer } from "./../Drawer/index";
 import { DropDown } from "../Dropdown";
 import { navbarItems } from "./../../assets/constants/navbar";
+import MenuIcon from "@material-ui/icons/Menu";
+import { IconButton } from "@material-ui/core";
 
 interface NavbarProps {
   drop: boolean;
@@ -13,7 +15,11 @@ interface NavbarProps {
   open: () => void;
 }
 
-export const Navbar: FC<NavbarProps> = ({ drop, close:handleDragClose, open:handleDragOpen }) => {
+export const Navbar: FC<NavbarProps> = ({
+  drop,
+  close: handleDragClose,
+  open: handleDragOpen,
+}) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const f = useRef<HTMLDivElement>(null);
@@ -73,11 +79,9 @@ export const Navbar: FC<NavbarProps> = ({ drop, close:handleDragClose, open:hand
             </div>
           </div>
           <div className={s.menu}>
-            <div className={s.menu_inner} onClick={handleOpen}>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
+              <IconButton size="medium" onClick={handleOpen} color="primary">
+                <MenuIcon />
+              </IconButton>
           </div>
         </div>
       </div>

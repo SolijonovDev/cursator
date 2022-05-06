@@ -9,7 +9,6 @@ import "swiper/css/navigation";
 
 import "./styles.scss";
 
-// import required modules
 import { Pagination, Navigation } from "swiper";
 import { Item } from "./Item";
 
@@ -22,7 +21,7 @@ export const SwiperCom=()=> {
         pagination={{
           type: "fraction",
         }}
-        slidesPerView={1.2}
+        slidesPerView={1}
         navigation={true}
         spaceBetween={53}
         modules={[Pagination, Navigation]}

@@ -4,6 +4,20 @@ import { SwiperCom } from "./Swiper";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
+import { Bread } from './../../components/Bread/index';
+import { breadModel } from './../../model/Bread';
+
+const bread:breadModel[]=[
+  {
+      id:1,
+      path:"/",
+      text:"Главная",
+  },
+  {
+      id:2,
+      text:"Тест"
+  }
+]
 
 export const Tests = () => {
   const [firstD, setFirstD] = React.useState(false);
@@ -34,6 +48,7 @@ export const Tests = () => {
 
   return (
     <div className={s.tests}>
+       <Bread items={bread}/>
       <div className={s.head}>
         <div className={classNames("container", s.inner)}>
           <h2 className={s.head_text}>Онлайн-тест на выбор профессии/курса</h2>
@@ -94,11 +109,13 @@ export const Tests = () => {
         </div>
         <div className={s.swiper_block}>
           <SwiperCom />
-          <Button 
-          disabled={lastD} 
-          onClick={handleNextSlide} 
-          variant="contained" 
-          color="primary">
+          <Button
+            disabled={lastD}
+            onClick={handleNextSlide}
+            variant="contained"
+            color="primary"
+            className={s.next}
+          >
             далее
           </Button>
         </div>

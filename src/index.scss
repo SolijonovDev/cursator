@@ -8,8 +8,6 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  // background-color: #e5e5e5;
   background-color: #fff;
 }
 
@@ -21,4 +19,24 @@ body {
 
 .MuiBox-root-5{
   margin-bottom: 0 !important;
+}
+
+.swiper-pagination-fraction{
+  position: absolute;
+  padding: 17px 0 !important;
+  border: 1px solid rgba(0, 117, 255, 1);
+  height: 54px !important;
+  width: 79px !important;
+  left: auto !important;
+  bottom: auto !important;
+  right: 48px !important;
+  text-align: center !important;
+  z-index: 100;
+  @media (max-width:600px) {
+    font-size: 12px !important;
+    padding: 10px !important;
+    width: auto !important;
+    height: auto !important;
+    right: 20px !important;
+  }
 }
